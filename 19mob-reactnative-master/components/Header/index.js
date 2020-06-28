@@ -6,7 +6,7 @@ import HeaderAndroid from './ComponentAndroid';
 import HeaderIOS from './ComponentIOS';
 
 const Header = Platform.select({  
-    ios: () => <HeaderIOS logo={ Logo } />,
+    ios: () => <HeaderIOS logo={ Logo} />,
     android: () => <HeaderAndroid logo={ Logo } />,
     default: () => <HeaderAndroid logo={ Logo } />
 });

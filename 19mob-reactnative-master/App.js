@@ -19,8 +19,8 @@ export default function App() {
       <NavigationContainer>
         <Stack.Navigator>
         <Stack.Screen name="Home" component={ HomeScreen } options={ { headerTitle: <Header /> } } />
-          <Stack.Screen name="Season" component={ SeasonScreen } />
-          <Stack.Screen name="Option" component={ OptionScreen } />
+          <Stack.Screen name="Season" component={ SeasonScreen } options={ { headerTitle: <Header />  } }/>
+          <Stack.Screen name="Option" component={ OptionScreen } options={ { headerTitle: <Header /> } }/>
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
