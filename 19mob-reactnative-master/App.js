@@ -7,6 +7,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import HomeScreen from './screens/Home';
 import SeasonScreen from './screens/Season';
+import OptionScreen from './screens/Option';
 
 import Header from './components/Header/index';
 
@@ -19,6 +20,7 @@ export default function App() {
         <Stack.Navigator>
         <Stack.Screen name="Home" component={ HomeScreen } options={ { headerTitle: <Header /> } } />
           <Stack.Screen name="Season" component={ SeasonScreen } />
+          <Stack.Screen name="Option" component={ OptionScreen } />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
