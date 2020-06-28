@@ -18,7 +18,8 @@ const Style = StyleSheet.create({
         textAlign: 'center',
     },
     image: {
-
+        height: 15,
+        width: 15, 
     }
 });
 

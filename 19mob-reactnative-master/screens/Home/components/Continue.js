@@ -2,23 +2,24 @@ import React from 'react';
 
 import { Button, Text } from 'native-base';
 
-import { Image } from '../../../assets/options.png';
+import { Picture } from '../../../assets/options.png';
 
 import Style from '../style';
-import { ImageBackground } from 'react-native';
+import { Image } from 'react-native';
+import Home from '../index';
 
 //const years = ['2020','2019', '2018', '2017'];
 
-const Continue = ({ lastSeason }) => {
-    return 
-        <ImageBackground source={ Image } style={ Style.image} >
-            <Button 
-                style={ Style.button }
-                onPress={ () => Home}
-            >
-                <Text>{ year.season }</Text>
-            </Button>
-        </ImageBackground>
+const Continue = ({ lastSeason, reloadList }) => {
+    console.log(reloadList);
+    return ( 
+        
+        <Button 
+            style={ Style.button }
+    onPress={ reloadList} >
+            <Text style={ Style.text} >...</Text>
+         </Button>
+    );
 }
 
 export default Continue;

@@ -2,6 +2,7 @@ import React, { Component, useState } from 'react';
 import { SafeAreaView} from 'react-native-safe-area-context';
 
 import Seasons from './components/Seasons';
+import Continue from './components/Continue';
 import { ScrollView } from 'react-native-gesture-handler';
 
 class Home extends Component {
@@ -10,6 +11,13 @@ class Home extends Component {
         result: [],
         list: [],
         lastSeason: 5,
+    }
+
+    reloadList = () => {
+        this.setState(
+            loadState => ({ lastSeason: loadState.lastSeason + 5 })
+        );
+        this.componentDidMount(); 
     }
 
     componentDidMount() {
@@ -33,6 +41,7 @@ class Home extends Component {
                 <ScrollView>
                     <Seasons 
                         handlerSeason={ this.props.navigation.navigate } years={ this.state.list } />
+                    <Continue lastSeason={ this.state.lastSeason } reloadList={ this.reloadList} />
                 </ScrollView>
             </SafeAreaView>
         );
