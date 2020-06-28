@@ -9,16 +9,32 @@ class Option extends Component {
     state = {
         result: [],
         list: [],
-        lastSeason: 5,
+        
+        
     }
 
     componentDidMount() {
-        fetch('https://ergast.com/api/f1/seasons.json?limit=100')
+        var year = this.props.route.params.year
+        var option = this.props.route.params.option 
+        fetch(`https://ergast.com/api/f1/${year}/${option}.json`)
             .then(response => response.json())
             .then(result => {
-                this.setState({ result: result.MRData.SeasonTable.Seasons.reverse()}) //= result.MRData.SeasonTable.Seasons.reverse().slice(0,10);
-                this.setState({ list: this.state.result.slice(0, this.state.lastSeason) });
-                //result.MRData.SeasonTable.Seasons.map(year => { if( year.season >= 2010) {array.push(year.season);}})
+                switch (option){
+                case 'drivers':
+                this.setState({ result: result.MRData.DriverTable.Drivers.reverse()})
+                this.setState({list: this.state.result .slice(0,10)});
+                break
+                case 'constructors':
+                this.setState({ result: result.MRData.ConstructorTable.Constructors.reverse()})
+                this.setState({list: this.state.result .slice(0,10)});
+                break
+                case 'circuits':
+                this.setState({ result: result.MRData.CircuitTable.Circuits.reverse()})
+                this.setState({list: this.state.result .slice(0,10)});
+                break
+                }
+                console.log(this.state.result)
+           
                            
             })
             .catch(err => {
@@ -33,11 +49,12 @@ class Option extends Component {
             <SafeAreaView>
                 <ScrollView>
                     <Details 
-                        /*handlerDetails={ this.props.navigation.navigate } */details={ ['Gui', 'Fi'] } />
+                        /*handlerDetails={ this.props.navigation.navigate } */details={ this.state.list }  option = { this.props.route.params.option }/>
                 </ScrollView>
             </SafeAreaView>
         );
     }
 }
+
 
 export default Option;

@@ -9,7 +9,7 @@ class Season extends Component {
 
     state = {
         season: 0,
-        options: ['Circuits','Drivers','Contructors']
+        options: ['circuits','drivers','constructors']
         
     }
 
