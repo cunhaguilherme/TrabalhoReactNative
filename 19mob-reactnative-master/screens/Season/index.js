@@ -9,6 +9,7 @@ class Season extends Component {
 
     state = {
         season: 0,
+        options: ['Circuits','Drivers','Contructors']
         
     }
 
@@ -23,7 +24,7 @@ class Season extends Component {
             <SafeAreaView>
                 <ScrollView>
                     <Options 
-                        handlerOptions={ this.props.navigation.navigate } options={ ['Circuits','Drivers','Contructors']} />
+                        handlerOptions={ this.props.navigation.navigate } options={ this.state.options} year={ this.state.season } />
                 </ScrollView>
             </SafeAreaView>
         );

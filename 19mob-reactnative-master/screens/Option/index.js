@@ -28,6 +28,7 @@ class Option extends Component {
     }
 
     render() {
+        console.log(this.props);
         return (
             <SafeAreaView>
                 <ScrollView>
