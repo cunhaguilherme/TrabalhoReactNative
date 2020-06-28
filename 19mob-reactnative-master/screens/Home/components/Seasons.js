@@ -8,7 +8,7 @@ import { Button, Text } from 'native-base';
 
 const Seasons = ({ handlerSeason, years }) => {
     return years
-        .map((year) => (
+        .map((year) => (  
             <Button 
                 key={ `season-${year.season}` }
                 style={ Style.button }
