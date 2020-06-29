@@ -4,7 +4,7 @@ import { Text } from 'native-base';
 
 import { View , StyleSheet} from 'react-native';
 
-const CircuitDetail = ({ circuit }) => {
+const CircuitDetail = ({ circuit, location }) => {
     console.log('Entrou no CircuitDetail.js')
     console.log(circuit)
     console.log(circuit.circuitName)
@@ -25,7 +25,9 @@ const CircuitDetail = ({ circuit }) => {
     let {itemStyle, itemText} = styles
     return ( 
         <View style={itemStyle}>
-          <Text style={itemText}><Text style={{fontWeight: "bold", color: "#fff", fontFamily: "Arial"}}>Circuito: </Text>{ circuit.circuitName }</Text>
+          <Text style={itemText}><Text style={{fontWeight: "bold", color: "#fff", fontFamily: "Arial"}}>Circuito: </Text>{ `${circuit.circuitName} ` }</Text>
+          <Text style={itemText}><Text style={{fontWeight: "bold", color: "#fff", fontFamily: "Arial"}}>Local: </Text>{ `${location.locality}` }</Text>
+          <Text style={itemText}><Text style={{fontWeight: "bold", color: "#fff", fontFamily: "Arial"}}>Pais: </Text>{ `${location.country}` }</Text>
           {/* <Text style={itemText}><Text style={{fontWeight: "bold", color: "#fff", fontFamily: "Arial"}}>Localidade: </Text>{ circuit.Location }</Text>
           <Text style={itemText}><Text style={{fontWeight: "bold", color: "#fff", fontFamily: "Arial"}}>País: </Text>{ circuit.Location }</Text> */}
         </View>

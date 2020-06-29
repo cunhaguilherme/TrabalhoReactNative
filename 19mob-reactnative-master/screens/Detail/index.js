@@ -13,7 +13,8 @@ import { View, FlatList, Text, ImagePropTypes, StyleSheet, Dimensions } from 're
 class Detail extends Component {
     
     state = {
-        result: [],   
+        result: [],  
+        resultLocation: []
     }
 
     componentDidMount() {
@@ -40,6 +41,7 @@ class Detail extends Component {
                 break
                 case 'circuits':
                     this.setState({ result: result.MRData.CircuitTable.Circuits[0]})
+                    this.setState({ resultLocation: result.MRData.CircuitTable.Circuits[0].Location })
                 break
                 }
                 console.log(this.state.result)
@@ -72,7 +74,9 @@ class Detail extends Component {
             return (
                 <SafeAreaView>
                     <ScrollView>   
-                        <CircuitDetail circuit = { this.state.result } />
+                        <CircuitDetail 
+                        circuit =  { this.state.result } 
+                        location = { this.state.resultLocation} />
                     </ScrollView>
                 </SafeAreaView>
             );
