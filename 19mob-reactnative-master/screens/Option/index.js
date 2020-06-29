@@ -24,15 +24,15 @@ class Option extends Component {
                 switch (option){
                 case 'drivers':
                     this.setState({ result: result.MRData.DriverTable.Drivers.reverse()})
-                    this.setState({list: this.state.result .slice(0,10)});
+                    this.setState({list: this.state.result .slice(0,20)});
                 break
                 case 'constructors':
                     this.setState({ result: result.MRData.ConstructorTable.Constructors.reverse()})
-                    this.setState({list: this.state.result .slice(0,10)});
+                    this.setState({list: this.state.result .slice(0,20)});
                 break
                 case 'circuits':
                     this.setState({ result: result.MRData.CircuitTable.Circuits.reverse()})
-                    this.setState({list: this.state.result .slice(0,10)});
+                    this.setState({list: this.state.result .slice(0,20)});
                 break
                 }
                 console.log(this.state.result)
